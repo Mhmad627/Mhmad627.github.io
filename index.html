@@ -279,7 +279,7 @@
   <div class="wrap">
     <div class="section-head">
       <h2>Selected work</h2>
-      <p>Three projects, three different problem spaces: a production web platform, a computer-vision desktop tool, and a clinical management system.</p>
+      <p>Four projects, four different problem spaces: a production web platform, a computer-vision desktop tool, a real-time multiplayer game, and a clinical management system.</p>
     </div>
 
     <!-- ---------- Jadwel ---------- -->
@@ -343,6 +343,12 @@
           <li>Python</li><li>PyTorch</li><li>ONNX</li><li>OpenCV</li>
           <li>Tkinter</li><li>PyInstaller</li>
         </ul>
+        <div class="links">
+          <a href="https://github.com/Mhmad627/Subtitle-Timer" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg>
+            View on GitHub
+          </a>
+        </div>
       </aside>
       <div class="body">
         <img class="shot tall" src="images/subtitle-timer.png" alt="Subtitle Timer window with the video preview, crop-box controls, and detection options">
@@ -353,8 +359,9 @@
         </p>
         <p>
           Instead of OCR or speech recognition, it uses a small CNN I trained from scratch to classify every sampled frame as
-          no subtitle, normal style, or special style. The user draws two crop boxes on a preview to mark where each style appears;
-          the classifications are grouped into timed blocks and written out as standard subtitles. Trained in PyTorch, exported to ONNX,
+          no subtitle, normal style, or special style. The user positions up to three independently-toggled crop boxes on a
+          preview — two for normal-style subtitles and one for a special stacked style — and a single pass classifies and times
+          all of them together, then writes the result out as a standard subtitle file. Trained in PyTorch, exported to ONNX,
           and run through OpenCV's DNN module so the packaged app has no PyTorch dependency.
         </p>
         <ul class="highlights">
@@ -364,15 +371,19 @@
           </li>
           <li>
             <b>The hard case</b>
-            <span>Two subtitles back-to-back with zero gap look like one long subtitle to a presence detector. A pixel-mask text-change detector in HSV space catches the glyphs changing and splits them correctly.</span>
+            <span>Two subtitles back-to-back with zero gap look like one long subtitle to a presence detector. A two-tier glyph mask — bright pixels near saturated color — catches the text changing even on low-saturation text, while ignoring noisy outlines that used to trigger false splits.</span>
           </li>
           <li>
             <b>Debugging a model</b>
             <span>Diagnosed a colour-invariance failure in the trained classifier and fixed it with targeted hue-rotation augmentation rather than collecting and labelling new data.</span>
           </li>
           <li>
+            <b>Automatic timing corrections</b>
+            <span>Two learned quirks are corrected automatically after detection: the special style's banner lags its true on-screen end by a fixed delay, and any block boundary landing on a frame-rounding edge case is nudged to stay frame-accurate — even where regions overlap and boundaries must move together.</span>
+          </li>
+          <li>
             <b>Real desktop app</b>
-            <span>Live video scrubbing, draggable and resizable overlays synced with numeric fields, background-threaded processing with cancellation so the UI never freezes, and a standalone <code>.exe</code> for non-technical users.</span>
+            <span>Live video scrubbing, draggable and resizable overlays synced with numeric fields and on/off toggles per region, auto-detection of the newest trained model, background-threaded processing with cancellation so the UI never freezes, and a standalone <code>.exe</code> for non-technical users.</span>
           </li>
         </ul>
       </div>
@@ -391,6 +402,10 @@
           <a href="https://mhmdalmarzooq-001-site1.ktempurl.com" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>
             View live website
+          </a>
+          <a href="https://github.com/Mhmad627/ClinicCare" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg>
+            View on GitHub
           </a>
         </div>
       </aside>
@@ -417,6 +432,61 @@
           <li>
             <b>Quality</b>
             <span>Wrote a 55-check automated regression suite and deployed the application live to a production host.</span>
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- ---------- UNO Online ---------- -->
+    <article class="project">
+      <aside>
+        <h3>UNO Online</h3>
+        <p class="role">Personal project · Full-stack, real-time</p>
+        <p class="period">2026</p>
+        <ul class="stack">
+          <li>Node.js</li><li>Raw WebSocket protocol</li><li>Docker</li><li>Hugging Face Spaces</li>
+        </ul>
+        <div class="links">
+          <a href="https://hamody627-uno.hf.space/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>
+            Play live
+          </a>
+          <a href="https://github.com/Mhmad627/UNO" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg>
+            View on GitHub
+          </a>
+        </div>
+      </aside>
+      <div class="body">
+        <img class="shot" src="images/UNO.png" alt="UNO Online game room in progress">
+
+        <p class="summary">
+          A full multiplayer UNO game for up to 15 players per room, playable in any browser with nothing to
+          install — built entirely on Node.js's built-in <code>http</code> module and deployed as a Docker
+          container on Hugging Face Spaces.
+        </p>
+        <p>
+          One player creates a room and gets a 6-letter code; everyone else joins with it and the host starts
+          the game once at least two people are seated. The full rule set is implemented — number cards, Skip,
+          Reverse, Draw Two, Wild and Wild Draw Four, draw stacking, UNO callouts with a catch window — plus a
+          rematch flow with a running win scoreboard.
+        </p>
+        <ul class="highlights">
+          <li>
+            <b>Zero dependencies</b>
+            <span><code>package.json</code> lists no runtime dependencies at all — the WebSocket handshake, frame parsing, and keepalive ping/pong are hand-implemented over Node's raw <code>http</code> module instead of pulling in a library.</span>
+          </li>
+          <li>
+            <b>Reconnect-proof state</b>
+            <span>Each player is tracked by a stable public id and a secret token, kept separate from their transient socket connection, so refreshing the page, losing Wi-Fi, or locking the phone reclaims the same seat and hand instead of ending the game.</span>
+          </li>
+          <li>
+            <b>Graceful disconnect handling</b>
+            <span>A disconnected player's turn auto-passes after 20 seconds instead of stalling the table for everyone else; a disconnected host gets a 60-second grace period before the room closes, so one dropped connection doesn't end the game.</span>
+          </li>
+          <li>
+            <b>Shippable anywhere</b>
+            <span>Runs with a single <code>node server.js</code> locally, or as a Docker image behind Hugging Face Spaces' proxy — including the periodic pings needed to keep the proxy from dropping idle sockets.</span>
           </li>
         </ul>
       </div>
