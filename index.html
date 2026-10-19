@@ -142,6 +142,8 @@
   .project .links { display: flex; flex-direction: column; gap: 8px; margin-top: 24px; font-size: 15px; font-weight: 600; }
   .project .links a { display: inline-flex; align-items: center; gap: 6px; }
   .project .links svg { width: 15px; height: 15px; }
+  .project .links .disabled { display: inline-flex; align-items: center; gap: 6px; color: var(--ink-faint); cursor: not-allowed; }
+  .project .links .disabled small { font-size: 13px; font-weight: 500; }
 
   .project .body p { margin: 0 0 18px; color: var(--ink-soft); }
   .project .body p.summary { color: var(--ink); font-size: 18px; }
@@ -499,10 +501,11 @@
           <li>ASP.NET Web Forms</li><li>C#</li><li>SQL Server</li>
         </ul>
         <div class="links">
-          <a href="https://mhmdalmarzooq-001-site1.ktempurl.com" target="_blank" rel="noopener">
+          <!-- Live site is no longer hosted; kept as a greyed-out, non-clickable label -->
+          <span class="disabled" title="The live deployment is no longer online">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>
-            View live website
-          </a>
+            View live website <small>(offline)</small>
+          </span>
           <a href="https://github.com/Mhmad627/ClinicCare" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg>
             View on GitHub
