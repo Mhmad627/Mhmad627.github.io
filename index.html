@@ -344,7 +344,7 @@
   <div class="wrap">
     <div class="section-head">
       <h2>Selected work</h2>
-      <p>Four projects, four different problem spaces: a production web platform, a computer-vision desktop tool, a real-time multiplayer game, and a clinical management system.</p>
+      <p>Five projects, five different problem spaces: a production web platform, an offline-first game companion app, a computer-vision desktop tool, a real-time multiplayer game, and a clinical management system.</p>
     </div>
 
     <!-- ---------- Jadwel ---------- -->
@@ -430,6 +430,96 @@
             <figure><button type="button"><img class="full" src="images/jadwel-verification-email.jpg" alt="Bilingual Arabic and English verification email" loading="lazy"></button><figcaption><b>Bilingual email</b>Arabic and English in one message</figcaption></figure>
             <figure><button type="button"><img src="images/jadwel-profile.jpg" alt="Profile page with security, notifications and saved places" loading="lazy"></button><figcaption><b>Profile</b>Security, notifications, saved places</figcaption></figure>
             <figure><button type="button"><img src="images/jadwel-bookings.jpg" alt="My bookings page" loading="lazy"></button><figcaption><b>Bookings</b>Tours booked with local guides</figcaption></figure>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ---------- Champions Battle Helper ---------- -->
+    <article class="project">
+      <aside>
+        <h3>Champions Battle Helper</h3>
+        <p class="role">Personal project · Web app (PWA)</p>
+        <p class="period">2026</p>
+        <ul class="stack">
+          <li>JavaScript</li><li>HTML / CSS</li><li>Service Worker</li><li>Python</li>
+          <li>PokéAPI</li><li>GitHub Actions</li><li>Cloudflare Pages</li>
+        </ul>
+        <div class="links">
+          <a href="https://champions-battle-helper.pages.dev/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>
+            Try it live
+          </a>
+          <a href="https://github.com/Mhmad627/champions-battle-helper" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg>
+            View on GitHub
+          </a>
+        </div>
+      </aside>
+      <div class="body">
+        <img class="shot" src="images/champions-hero.jpg" alt="Champions Battle Helper showing Garchomp's weaknesses: Ice 4×, Dragon and Fairy 2×">
+
+        <p class="summary">
+          A fast, phone-first battle companion for Pokémon Champions: type the name of the Pokémon you're facing and it
+          shows which move types hit it hardest, which to avoid, and which abilities could change the result — quick enough
+          to check mid-battle.
+        </p>
+        <p>
+          It covers all 1,230 Pokémon and forms and all 313 abilities, with a six-slot team checker, a tap-to-explain 18×18
+          type chart, weather and terrain rules, and a beginner glossary. It's a static site with no build step and no
+          runtime dependencies, installs to the home screen, and works fully offline.
+        </p>
+        <ul class="highlights">
+          <li>
+            <b>Data pipeline</b>
+            <span>Pokémon and ability data is generated from PokéAPI by a Python build script with an offline cache, rather than edited by hand — so a game update is a re-run, not a rewrite.</span>
+          </li>
+          <li>
+            <b>Automated upkeep</b>
+            <span>A weekly GitHub Actions job compares the in-game roster against a public source and opens a pull request listing what was added or removed, keeping hand-written notes untouched.</span>
+          </li>
+          <li>
+            <b>Ability-aware maths</b>
+            <span>Abilities like Levitate, Flash Fire or Thick Fat are applied to every matchup, or flagged as "might have" when a Pokémon has more than one possible ability. Tap any result to see the calculation.</span>
+          </li>
+          <li>
+            <b>Two perspectives</b>
+            <span>Every lookup and team works both ways: <em>I'm fighting it</em> shows what beats it, <em>I'm using it</em> shows what to watch out for and what its own moves are strong against.</span>
+          </li>
+          <li>
+            <b>Built to be used</b>
+            <span>Offline support via a versioned service worker, typo-tolerant search, shareable URLs, light and dark themes, keyboard shortcuts, and no accounts, cookies or analytics — nothing typed leaves the device.</span>
+          </li>
+        </ul>
+
+        <!-- Screenshot gallery: click any image to enlarge -->
+        <div class="gallery" data-gallery>
+          <h4>Inside the app</h4>
+          <div class="tabs" role="tablist" aria-label="Champions Battle Helper screenshots">
+            <button role="tab" id="ct-lookup" aria-controls="cp-lookup" aria-selected="true">Pokémon lookup</button>
+            <button role="tab" id="ct-team" aria-controls="cp-team" aria-selected="false" tabindex="-1">Team checker</button>
+            <button role="tab" id="ct-ref" aria-controls="cp-ref" aria-selected="false" tabindex="-1">Type chart &amp; reference</button>
+          </div>
+
+          <div class="grid" role="tabpanel" id="cp-lookup" aria-labelledby="ct-lookup">
+            <figure><button type="button"><img class="full" src="images/champions-search.jpg" alt="Search for 'charzard' still finds Charizard, with Charmander marked as not in Champions" loading="lazy"></button><figcaption><b>Typo-tolerant search</b>"charzard" still finds Charizard</figcaption></figure>
+            <figure><button type="button"><img class="full" src="images/champions-plan.jpg" alt="Battle plan for Garchomp: hit it with Ice, Dragon, Fairy; avoid Electric, Fire, Poison, Rock" loading="lazy"></button><figcaption><b>Battle plan</b>What to hit it with, what to skip</figcaption></figure>
+            <figure><button type="button"><img class="full" src="images/champions-using.jpg" alt="I'm using it view: threats to Garchomp and what its own moves are strong against" loading="lazy"></button><figcaption><b>I'm using it</b>Threats and what its moves beat</figcaption></figure>
+            <figure><button type="button"><img class="full" src="images/champions-mobile-pair.jpg" alt="Two phone screens showing the Gengar lookup and bottom tab bar" loading="lazy"></button><figcaption><b>Made for phones</b>Check a matchup mid-battle</figcaption></figure>
+            <figure><button type="button"><img class="full" src="images/champions-light.jpg" alt="Light theme showing Dragonite's weaknesses" loading="lazy"></button><figcaption><b>Light theme</b>Follows the system setting</figcaption></figure>
+            <figure><button type="button"><img class="full" src="images/champions-rank.jpg" alt="Best and worst types dialog ranking the toughest type combinations" loading="lazy"></button><figcaption><b>Best &amp; worst types</b>Toughest, most fragile, best attackers</figcaption></figure>
+          </div>
+
+          <div class="grid" role="tabpanel" id="cp-team" aria-labelledby="ct-team" hidden>
+            <figure><button type="button"><img class="full" src="images/champions-team-use.jpg" alt="Team checker with six Pokémon showing the team's biggest weakness is Fairy" loading="lazy"></button><figcaption><b>Your team</b>Shared weaknesses at a glance</figcaption></figure>
+            <figure><button type="button"><img class="full" src="images/champions-team-fight.jpg" alt="Team checker in fighting mode recommending Ice moves against the opposing team" loading="lazy"></button><figcaption><b>Their team</b>Best move types to bring</figcaption></figure>
+            <figure><button type="button"><img class="full" src="images/champions-team-table.jpg" alt="Table of every move type against every Pokémon on the team" loading="lazy"></button><figcaption><b>Full breakdown</b>Every move type vs. every member</figcaption></figure>
+          </div>
+
+          <div class="grid" role="tabpanel" id="cp-ref" aria-labelledby="ct-ref" hidden>
+            <figure><button type="button"><img class="full" src="images/champions-chart.jpg" alt="Full 18 by 18 type chart" loading="lazy"></button><figcaption><b>Type chart</b>18×18, tap any square to explain</figcaption></figure>
+            <figure><button type="button"><img class="full" src="images/champions-abilities.jpg" alt="Searchable list of 313 abilities with filters" loading="lazy"></button><figcaption><b>Abilities</b>All 313, searchable and filterable</figcaption></figure>
+            <figure><button type="button"><img class="full" src="images/champions-weather.jpg" alt="Weather cards for harsh sunlight and rain with related abilities" loading="lazy"></button><figcaption><b>Weather &amp; terrain</b>What each one does, in plain words</figcaption></figure>
           </div>
         </div>
       </div>
@@ -664,10 +754,6 @@
             <li>Claude 101</li>
             <li>Claude Code 101</li>
             <li>Claude Platform 101</li>
-          </ul>
-          <h3 style="margin-top: 18px">Saudi Council of Engineers (SCE)</h3>
-          <ul>
-            <li>Specialist Membership</li>
           </ul>
         </div>
       </div>
